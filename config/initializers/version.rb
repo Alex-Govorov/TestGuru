@@ -1,6 +1,5 @@
-class Configuration
-  class << self
-    attr_accessor :app_version
+module TestGuru
+  class Application
+    VERSION = '0.1.0'.freeze
   end
-  @app_version = '0.1.0'
 end

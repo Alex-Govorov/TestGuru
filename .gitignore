@@ -39,3 +39,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore Sublime project file's
+README.sublime-project
+README.sublime-workspace
