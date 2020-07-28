@@ -1,6 +1,9 @@
 class Test < ApplicationRecord
   has_many :user_test
   has_many :users, through: :user_test
+  has_many :questions
+  belongs_to :category
+  belongs_to :user
 
   def self.by_category_title(category_title)
     # Тут скорее более красиво можно сделать через ассоциации, но в учебных целях
