@@ -14,9 +14,17 @@ category_frontend = Category.find_or_create_by(title: 'Frontend')
 category_databases = Category.find_or_create_by(title: 'Databases')
 
 # Пользователи
-user_adam = User.find_or_create_by(name: 'Адам')
-user_eva = User.find_or_create_by(name: 'Ева')
-user_god = User.find_or_create_by(name: 'Бог')
+user_adam = User.find_or_create_by(name: 'Адам') do |user|
+  user.email = 'adam@paradise.com'
+end
+
+user_eva = User.find_or_create_by(name: 'Ева') do |user|
+  user.email = 'eva@paradise.com'
+end
+
+user_god = User.find_or_create_by(name: 'Бог') do |user|
+  user.email = 'god@paradise.com'
+end
 
 # Тесты
 test_html = Test.find_or_create_by(title: 'HTML5') do |test|
