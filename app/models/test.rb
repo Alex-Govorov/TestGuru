@@ -11,12 +11,13 @@ class Test < ApplicationRecord
   scope :by_category_title, lambda { |title|
     joins(:category).where(categories: { title: title }).order(title: :desc)
   }
+  scope :by_level, ->(level) { where(level: level) }
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.by_category_title(title)
-    joins(:category).where(categories: { title: title }).pluck(:title)
+  def self.titles_by_category(title)
+    by_category_title(title).pluck(:title)
   end
 end
