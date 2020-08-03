@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   def validate_max_answers
     max_answers = 4
     err_msg = "The number of answers cannot be more than #{max_answers}"
-    errors.add(:base, err_msg) if question.answers.length >= max_answers
+    errors.add(:base, err_msg) if question.answers.count >= max_answers
   end
 end
