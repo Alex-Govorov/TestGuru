@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Новый вопрос</h1>
+
+<form action="/tests/<%= params[:test_id] %>/questions" method="post">
+  <label for="body">Question body:</label>
+  <input type="text" id="body" name="body"><br/><br/>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">    
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
