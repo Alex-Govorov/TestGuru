@@ -38,15 +38,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.permit(:body)
-    # Не разобрался с require
-    # у меня передаются параметры:
-    # <ActionController::Parameters {"body"=>"22", "authenticity_token"=>"/iokENLPIfhavHwmxp9QB/8aflOczYJ0/IvY044x8St2PFfTSyl4y4VmGab7gZaT5qf/EUZ+tcITnXPwEalr8A==", "controller"=>"questions", "action"=>"create", "test_id"=>"1"} permitted: false>
-    # а для вызова params.require(:question).permit(:body)
-    # параметры насколько я понимаю должны выглядить так:
-    # <ActionController::Parameters {question=>{"body"=>"22", "test_id"=>"1"}, "authenticity_token"=>"/iokENLPIfhavHwmxp9QB/8aflOczYJ0/IvY044x8St2PFfTSyl4y4VmGab7gZaT5qf/EUZ+tcITnXPwEalr8A==", "controller"=>"questions", "action"=>"create"} permitted: false>
-    # но как этого добиться, не пойму =(
-    # я понимаю как этого добиться в GET запросе
-    # но как заставить html форму сформировать POST запрос чтобы передать хэш question=>{"body"=>"22", "test_id"=>"1"} - не понимаю
+    params.require(:question).permit(:body)
   end
 end
