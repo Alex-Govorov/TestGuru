@@ -5,11 +5,11 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
   def index
-    @questions = @test.questions.all
+    @questions = @test.questions
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def create
@@ -51,5 +51,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
+  end
+
+  def find_test
+    @test = Test.find(params[:test_id])
   end
 end
