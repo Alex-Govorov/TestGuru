@@ -1,0 +1,9 @@
+<% if @user_test.success_rate >= 85 %>
+	<h1>The <%= @user_test.test.title %> Test was successfully Completed!</h1>
+	<p> Success rate is: <span class="green"><%= @user_test.success_rate %>%</span></p>
+<% else %>
+	<h1>The <%= @user_test.test.title %> Test was Failed!</h1>
+	<p> Success rate is: <span class="red"><%= @user_test.success_rate %>%</span></p>
+<% end %>
+
+<%= link_to 'Back', tests_path %>
