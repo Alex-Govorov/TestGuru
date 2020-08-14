@@ -1,4 +1,4 @@
-<% if @user_test.success_rate >= 85 %>
+<% if @user_test.successful? %>
 	<h1>The <%= @user_test.test.title %> Test was successfully Completed!</h1>
 	<p> Success rate is: <span class="green"><%= @user_test.success_rate %>%</span></p>
 <% else %>
