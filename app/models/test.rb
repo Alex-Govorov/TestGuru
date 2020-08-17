@@ -1,8 +1,8 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :user_test, dependent: :destroy
-  has_many :users, through: :user_test, dependent: :destroy
+  has_many :user_tests, dependent: :destroy
+  has_many :users, through: :user_tests, dependent: :destroy
   has_many :questions, dependent: :destroy
 
   scope :easy, -> { where(level: 0..1) }

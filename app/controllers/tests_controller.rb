@@ -41,7 +41,7 @@ class TestsController < ApplicationController
 
   def start
     @user.tests.push(@test)
-    redirect_to @user.user_test_find(@test)
+    redirect_to @user.user_test(@test)
   end
 
   private
@@ -55,6 +55,6 @@ class TestsController < ApplicationController
   end
 
   def set_user
-    @user = User.first
+    @user = User.find_by(id: session[:user_id])
   end
 end

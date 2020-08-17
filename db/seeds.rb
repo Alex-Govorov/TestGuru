@@ -54,13 +54,13 @@ end
 # Тесты, которые прошли или проходят пользователи
 # !!!
 # Вот тут пока не придумал, как защиту от дублей сделать..
-user_adam.user_test.create(test: test_sql, completion_date: 2.weeks.ago)
-user_adam.user_test.create(test: test_python)
+user_adam.user_tests.create(test: test_sql, completion_date: 2.weeks.ago)
+user_adam.user_tests.create(test: test_python)
 
-user_eva.user_test.create(test: test_html)
+user_eva.user_tests.create(test: test_html)
 
-user_god.user_test.create(test: test_sql, completion_date: 5.years.ago)
-user_god.user_test.create(test: test_ruby)
+user_god.user_tests.create(test: test_sql, completion_date: 5.years.ago)
+user_god.user_tests.create(test: test_ruby)
 
 # Вопросы/Ответы
 question1_body = 'Для чего используют тег div?'
