@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TestGuru</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>TestGuru</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-      <section class="nav container">
-        <div class="nav title">
-          <%= link_to 'TestGuru', root_path, class: 'nav title' %>
-        </div>
-       <div class="nav user">
-        <% if logged_in? %>
-          Welcome, <b><%= current_user.name %></b> Guru
-          <%= link_to 'Logout', logout_path %>
-        <% else %>
-          <%= link_to 'Signup', signup_path %>
-      </p>
-    <% end %>
-        </div>
-        </section>
+<body>
+  <section class="nav container">
+    <div class="nav title">
+      <%= link_to 'TestGuru', root_path, class: 'nav title' %>
+    </div>
+    <div class="nav user">
+      <% if logged_in? %>
+        Welcome, <b><%= current_user.name %></b> Guru
+      <%= link_to 'Logout', logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Signup', signup_path %>
+      <% end %>
+    </div>
+  </section>
 
-    <%= yield %>
-    <%= render 'shared/footer' %>
-  </body>
+  <%= yield %>
+  <%= render 'shared/footer' %>
+</body>
 </html>
