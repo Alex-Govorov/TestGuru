@@ -1,22 +1,9 @@
-class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[new create]
+class SessionsController < Devise::SessionsController
+  after_action :welcome_message, only: :create
 
-  def new; end
+  private
 
-  def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to session.delete(:url) || root_path
-    else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
-      render :new
-    end
-  end
-
-  def destroy
-    session.delete(:user_id)
-    redirect_to root_path
+  def welcome_message
+    flash[:notice] = "Привет, #{current_user.name}"
   end
 end

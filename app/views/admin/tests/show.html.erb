@@ -1,0 +1,15 @@
+<p>
+	<strong>Title:</strong>
+	<%= @test.title %>
+</p>
+
+<p>
+	<strong>Level:</strong>
+	<%= @test.level %>
+</p>
+
+<%= render :template => 'admin/questions/index' %>
+<%#= render partial: 'questions/question', collection: @test.questions %>
+
+
+<%= link_to 'Back', admin_tests_path %>

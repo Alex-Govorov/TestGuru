@@ -1,4 +1,12 @@
 class User < ApplicationRecord
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
+
   EMAIL_FORMAT = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/.freeze
 
   has_many :user_tests, dependent: :destroy
@@ -8,8 +16,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, format: { with: EMAIL_FORMAT }
   validates :email, uniqueness: true
-
-  has_secure_password
 
   def tests_by_level(test_level)
     tests.by_level(test_level)
