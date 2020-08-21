@@ -9,7 +9,7 @@ class Admin
 
     def admin_required!
       msg = 'You are not authorized to view this page.'
-      redirect_to root_path, alert: msg unless current_user.is_a?(Admin)
+      redirect_to root_path, alert: msg unless current_user.admin?
     end
   end
 end

@@ -1,7 +1,7 @@
 class Admin
   class QuestionsController < Admin::BaseController
-    before_action :find_test, only: %i[index create new]
-    before_action :find_question, only: %i[show destroy update edit]
+    before_action :set_test, only: %i[index create new]
+    before_action :set_question, only: %i[show destroy update edit]
 
     rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
@@ -42,7 +42,7 @@ class Admin
 
     private
 
-    def find_question
+    def set_question
       @question = Question.find(params[:id])
     end
 
@@ -54,7 +54,7 @@ class Admin
       params.require(:question).permit(:body)
     end
 
-    def find_test
+    def set_test
       @test = Test.find(params[:test_id])
     end
   end

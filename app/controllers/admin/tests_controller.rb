@@ -1,6 +1,6 @@
 class Admin
   class TestsController < Admin::BaseController
-    before_action :find_test, only: %i[show destroy edit update start]
+    before_action :set_test, only: %i[show destroy edit update start]
 
     def index
       @tests = Test.all
@@ -46,7 +46,7 @@ class Admin
       params.require(:test).permit(:title, :level, :category_id, :user_id)
     end
 
-    def find_test
+    def set_test
       @test = Test.find(params[:id])
     end
   end

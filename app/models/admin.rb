@@ -1,4 +1,3 @@
 class Admin < User
-  validates :name, presence: true
-  validates :surname, presence: true
+  validates :name, :surname, presence: true
 end
