@@ -30,4 +30,89 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin_panel: "Admin Panel"
+  are_you_sure: "Are you sure?"
+  back: "Back"
+  delete: "Delete"
+  edit: "Edit"
+  hello: "Hello"
+  login: "Log in"
+  show: "Show"
+  logout: "Logout"
+  next: "Next"
+  signup: "Sign Up"
+  welcome: "Welcome"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      user:
+        remember_me: "Remember me"
+        password_confirmation: "Passwrod confirmation"
+    select:
+      prompt: "Please select category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  user_tests:
+    show:
+      header: "Passing the %{test_title} Test. Question %{question_number} of %{total_questions}"
+    result:
+      header_success: "Test %{title} was Completed!"
+      header_fail: "The %{title} test was Failed!"
+      success_rate: "Success rate is"
+
+  admin:
+    answers:
+      edit:
+        header: "Edit Answer"
+      new:
+        header: "New Answer"
+    questions:
+      edit:
+        edit_question: "Edit %{title} Question"
+      index:
+       header: "Questions"
+       new_question: "New Question"
+      new:
+        create_new_question: "Create new %{title} question"
+      show:
+        header: "Ответы"
+        new_answer: "New Answer"
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        new_test: "New Test"
+      new:
+        header: "New Test"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"

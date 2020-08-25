@@ -1,4 +1,5 @@
-<h1>Passing the <%= @user_test.test.title %> Test. Question <%= @user_test.question_number %> of <%= @user_test.total_questions %></h1>
+<h1><%= t('.header', test_title: @user_test.test.title, question_number: @user_test.question_number,
+total_questions: @user_test.total_questions) %></h1>
 
 <b>
 	<%= @user_test.current_question.body %>
@@ -11,5 +12,5 @@
 		<%= b.label %>
 	<% end %>
 
-	<p><%= form.submit 'Next' %></p>
+	<p><%= form.submit t(:next) %></p>
 <% end %>

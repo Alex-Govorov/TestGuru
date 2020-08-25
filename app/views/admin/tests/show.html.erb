@@ -1,15 +1,14 @@
 <p>
-	<strong>Title:</strong>
+	<strong><%= Test.human_attribute_name(:title) %>:</strong>
 	<%= @test.title %>
 </p>
 
 <p>
-	<strong>Level:</strong>
+	<strong><%= Test.human_attribute_name(:level) %>:</strong>
 	<%= @test.level %>
 </p>
 
 <%= render :template => 'admin/questions/index' %>
-<%#= render partial: 'questions/question', collection: @test.questions %>
 
 
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t(:back), admin_tests_path %>

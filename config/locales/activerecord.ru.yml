@@ -1,0 +1,26 @@
+ru:
+  activerecord:
+    models:
+      answer: "Ответ"
+      question: "Вопрос"
+      test: "Тест"  
+
+    attributes:
+      answer:
+        body: "Текст ответа"
+        correct: "Правильно"
+      question:
+        body: "Тест вопроса"
+      test:
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+      user:
+        email: "Эл. почта"
+        name: "Имя"
+        password: "Пароль"
+        surname: "Фамилия"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"

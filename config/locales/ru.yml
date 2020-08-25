@@ -1,0 +1,89 @@
+ru:
+  admin_panel: "Панель Администратора"
+  are_you_sure: "Вы уверены?"
+  back: "Назад"
+  delete: "Удалить"
+  edit: "Редактировать"
+  hello: "Привет"
+  login: "Войти"
+  logout: "Выйти"
+  next: "Дальше"
+  show: "Показать"
+  signup: "Регистрация"
+  welcome: "Добро пожаловать"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      user:
+        remember_me: "Запомнить меня"
+        password_confirmation: "Подтверждение пароля"
+    select:
+      prompt: "Выберите категорию"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросов"
+      actions: "Действия"
+    test:
+      start: "Старт"
+
+  user_tests:    
+    result:
+      header_success: "Тест %{title} успешно завершен!"
+      header_fail: "Тест %{title} не пройден!"
+      success_rate: "Процент успеха составляет"
+    show:
+      header: "Прохождение %{test_title} теста. Вопрос %{question_number} из %{total_questions}"
+
+  admin:
+    answers:
+      edit:
+        header: "Редактировать ответ"
+      new:
+        header: "Новый ответ"
+    questions:
+      edit:
+        edit_question: "Редактировать %{title} вопрос"
+      index:
+        header: "Вопросы"
+        new_question: "Новый вопрос"
+      new:
+        create_new_question: "Создать новый %{title} вопрос"
+      show:
+        header: "Ответы"
+        new_answer: "Новый ответ"
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Тесты"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросов"
+        actions: "Действия"
+        new_test: "Новый Тест"
+      new:
+        header: "Новый тест"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"

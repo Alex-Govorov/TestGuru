@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      answer: "Answer"
+      question: "Question"
+      test: "Test"
+
+    attributes:
+      answer:
+        body: "Answers body"
+        correct: "Correct"
+      test:
+        title: "Title"
+        category: "Категория"
+        level: "Level"
+      user:
+        email: "Эл. почта"
+        name: "Имя"
+        password: "Пароль"
+        surname: "Фамилия"
+
+    errors:
+      messages:
+        blank: "can't be blank"
