@@ -7,4 +7,8 @@ module ApplicationHelper
     html = "<a href=\"https://github.com/#{author}/#{repo}\" target=\"_blank\">#{repo}</a>"
     html.html_safe
   end
+
+  def flash_css_class
+    flash[:alert] ? 'danger' : 'info'
+  end
 end

@@ -3,7 +3,8 @@
 
   <span class = "navbar-text">
     <% if user_signed_in? %>
-      <%= t(:welcome) %>, <b><%= current_user.email %></b> Guru
+      <%= link_to t(:admin_panel), admin_tests_path, class: 'btn btn-outline-warning btn-sm' if current_user.admin? %>
+      <%= t(:welcome) %>, <b><%= current_user.name %></b> Guru
       <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
 
     <% else %>

@@ -1,16 +1,20 @@
 <h1><%= t('.header', test_title: @user_test.test.title, question_number: @user_test.question_number,
 total_questions: @user_test.total_questions) %></h1>
 
-<b>
+
+<h5>
 	<%= @user_test.current_question.body %>
-</b>
+</h5>
 
 <%= form_with url: user_test_path(@user_test), local: true, method: :put do |form| %>
+<div class="form-group mt-3">
 	<%= form.collection_check_boxes :answer_ids, @user_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-	<p>
+	<div class="col">
 		<%= b.check_box id: "answer_ids_#{b.object.id}" %>
 		<%= b.label %>
+  </div>
 	<% end %>
 
-	<p><%= form.submit t(:next) %></p>
+	<p><%= form.submit t(:next), class: 'btn btn-primary btn-sm' %></p>
+</div>
 <% end %>
