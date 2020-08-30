@@ -43,3 +43,6 @@ yarn-debug.log*
 # Ignore Sublime project file's
 README.sublime-project
 README.sublime-workspace
+
+# Ignore secrets
+.env

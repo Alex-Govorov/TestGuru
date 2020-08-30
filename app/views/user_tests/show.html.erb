@@ -15,6 +15,7 @@ total_questions: @user_test.total_questions) %></h1>
   </div>
 	<% end %>
 
+  <p><%= link_to t('.gist_question'), gist_user_test_path(@user_test), method: :post %></p>
 	<p><%= form.submit t(:next), class: 'btn btn-primary btn-sm' %></p>
 </div>
 <% end %>

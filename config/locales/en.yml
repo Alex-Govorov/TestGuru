@@ -3,6 +3,7 @@ en:
   are_you_sure: "Are you sure?"
   back: "Back"
   delete: "Delete"
+  description: "A question about %{title} from TestGuru"
   edit: "Edit"
   hello: "Hello"
   login: "Log in"
@@ -46,6 +47,10 @@ en:
       start: "Start"
 
   user_tests:
+    gist:
+      success: "Gist successfully %{link}!"
+      failure: "An error occurred while saving the gist"
+      saved: "saved"
     show:
       header: "Passing the %{test_title} Test. Question %{question_number} of %{total_questions}"
     result:

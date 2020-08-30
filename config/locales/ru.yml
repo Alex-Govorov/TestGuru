@@ -3,6 +3,7 @@ ru:
   are_you_sure: "Вы уверены?"
   back: "Назад"
   delete: "Удалить"
+  description: "Вопрос о %{title} от TestGuru"
   edit: "Редактировать"
   hello: "Привет"
   login: "Войти"
@@ -47,7 +48,11 @@ ru:
     test:
       start: "Старт"
 
-  user_tests:    
+  user_tests:
+    gist:
+      success: "Gist успешно %{link}"
+      failure: "Во время сохранения gist произошла ошибка"
+      saved: "сохранён"
     result:
       header_success: "Тест %{title} успешно завершен!"
       header_fail: "Тест %{title} не пройден!"

@@ -10,6 +10,10 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def gist_link(id, text)
+    "<a href=\"https://gist.github.com/#{id}\" target=\"_blank\">#{text}</a>".html_safe
+  end
+
   def flash_css_class(key)
     raise "Define bootstrap alert class for flash type: #{key}" unless BOOTSTRAP_FLASH[key]
 
