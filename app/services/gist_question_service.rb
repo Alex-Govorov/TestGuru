@@ -1,8 +1,8 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['GIST_TOKEN'])
+    @client = client
   end
 
   def call
@@ -10,7 +10,7 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response.status == 201
+    true unless @client.last_response.data[:html_url].blank?
   end
 
   def id
@@ -18,6 +18,10 @@ class GistQuestionService
   end
 
   private
+
+  def default_client
+    Octokit::Client.new(access_token: ENV['GIST_TOKEN'])
+  end
 
   def gist_params
     {
