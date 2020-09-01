@@ -43,6 +43,11 @@ gem 'octokit', '~> 4.0'
 
 gem 'rails-i18n', '~> 6.0.0'
 
+# UI
+gem 'octicons_helper'
+# Fix for deprecation warning in sprockets
+gem 'sprockets-rails', git: 'git://github.com/rails/sprockets-rails.git'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
