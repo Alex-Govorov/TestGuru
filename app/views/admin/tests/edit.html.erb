@@ -1,3 +1,5 @@
-<h1>Edit <%= @test.title %> test</h1>
+<h1><%= "#{t(:edit)} #{@test.title} #{Test.model_name.human}" %></h1>
+<%# Подключаю JS чтобы появилась ошибка, которую надо пофиксить по заданию %>
+<%= javascript_pack_tag 'utilities/form_inline' %>
 <%= render 'form' %>
 <%= link_to t(:back), admin_tests_path %>

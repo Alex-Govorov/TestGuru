@@ -74,7 +74,7 @@ en:
         create_new_question: "Create new %{title} question"
       show:
         header: "Ответы"
-        new_answer: "New Answer"
+        new_answer: "New Answer"      
     tests:
       create:
         success: "Test was successfully created."
@@ -87,6 +87,8 @@ en:
         new_test: "New Test"
       new:
         header: "New Test"
+      form_inline:
+        submit: "OK"
 
   tests_mailer:
     completed_test:

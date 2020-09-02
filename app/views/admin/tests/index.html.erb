@@ -1,5 +1,9 @@
 <h1><%= t('.header') %></h1>
 
+<%= javascript_pack_tag 'utilities/form_inline' %>
+
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table">
   <thead>
    <tr>
