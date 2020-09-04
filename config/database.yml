@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *default
-  database: test_guru_prod
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: test_guru_prod
   # username: username
   # password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
