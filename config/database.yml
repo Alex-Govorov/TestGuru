@@ -21,9 +21,9 @@ test:
   <<: *default
   database: test_guru_test
 
-# production:
-  # <<: *default
-  #url: <%= ENV['DATABASE_URL'] %>
-  #database: test_guru_prod
+production:
+  <<: *default
+  # url: <%= ENV['DATABASE_URL'] %>
+  # database: test_guru_prod
   # username: username
   # password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
