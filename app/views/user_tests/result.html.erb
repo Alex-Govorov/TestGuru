@@ -6,4 +6,4 @@
 	<p> <%= t('.success_rate') %>: <span class="text-danger"><%= @user_test.success_rate %>%</span></p>
 <% end %>
 
-<%= link_to t(:back), tests_path %>
+<%= link_to t(:back), tests_path, class: 'btn btn-secondary' %>

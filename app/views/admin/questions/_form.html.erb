@@ -3,8 +3,8 @@
 
 	<p>
 		<%= form.label :body %><br/>
-		<%= form.text_field :body, id: :question_body %>
+		<%= form.text_field :body, id: :question_body, size: 50 %>
 	</p>
 
-	<p> <%= form.submit %></p>
+	<p> <%= form.submit(class: 'btn btn-primary') %></p>
 	<% end %>

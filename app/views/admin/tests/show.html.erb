@@ -1,15 +1,17 @@
-<p>
+<div class="mt-3">
 	<strong><%= Test.human_attribute_name(:title) %>:</strong>
 	<%= @test.title %>
-</p>
+
 
 <p>
 	<strong><%= Test.human_attribute_name(:level) %>:</strong>
 	<%= @test.level %>
 </p>
 
+</div>
+
 <%= render :template => 'admin/questions/index' %>
 
 
-<%= link_to t(:edit), edit_admin_test_path(@test) %>
-<%= link_to t(:back), admin_tests_path %>
+<%= link_to t(:edit), edit_admin_test_path(@test), class: 'btn btn-primary' %>
+<%= link_to t(:back), admin_tests_path, class: 'btn btn-secondary' %>

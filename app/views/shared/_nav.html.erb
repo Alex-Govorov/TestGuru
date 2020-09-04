@@ -1,14 +1,21 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light <%= 'navbar-expand-lg' if current_user %>">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= new_feedback_path %>"><%= t(:feedback_title) %> <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
 
   <span class = "navbar-text">
     <% if user_signed_in? %>
-      <%= link_to t(:admin_panel), admin_tests_path, class: 'btn btn-outline-warning btn-sm' if current_user.admin? %>
-      <%= t(:welcome) %>, <b><%= current_user.name %></b> Guru
-      <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+    <%= link_to t(:admin_panel), admin_tests_path, class: 'btn btn-outline-warning btn-sm' if current_user.admin? %>
+    <%= t(:welcome) %>, <b><%= current_user.name %></b> Guru
+    <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
 
     <% else %>
-      <%= link_to t(:signup), new_user_registration_path %>
+    <%= link_to t(:signup), new_user_registration_path %>
     <% end %>
   </span>
 </nav>

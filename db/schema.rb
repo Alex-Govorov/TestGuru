@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_035233) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"

@@ -5,6 +5,7 @@ en:
   delete: "Delete"
   description: "A question about %{title} from TestGuru"
   edit: "Edit"
+  feedback_title: "Feedback"
   hello: "Hello"
   login: "Log in"
   show: "Show"
@@ -90,6 +91,17 @@ en:
       form_inline:
         submit: "OK"
 
+  feedback:
+    new:
+      enter_your_message: "Enter your message:"      
+      send: "Send"
+    create:
+      message_sent: "Message sent"
+
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  feedback_mailer:
+    new_feedback:
+      subject: "New message on TestGuru!"

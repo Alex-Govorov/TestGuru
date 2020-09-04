@@ -5,7 +5,8 @@ ru:
   delete: "Удалить"
   description: "Вопрос о %{title} от TestGuru"
   edit: "Редактировать"
-  hello: "Привет"
+  feedback_title: "Обратная связь"
+  hello: "Привет"  
   login: "Войти"
   logout: "Выйти"
   next: "Дальше"
@@ -59,6 +60,7 @@ ru:
       success_rate: "Процент успеха составляет"
     show:
       header: "Прохождение %{test_title} теста. Вопрос %{question_number} из %{total_questions}"
+      gist_question: "Сохранить вопрос в Gist"
 
   admin:
     answers:
@@ -70,6 +72,7 @@ ru:
       edit:
         edit_question: "Редактировать %{title} вопрос"
       index:
+        actions: "Действия"
         header: "Вопросы"
         new_question: "Новый вопрос"
       new:
@@ -92,6 +95,17 @@ ru:
       form_inline:
         submit: "ОК"
 
+  feedback:
+    new:
+      enter_your_message: "Введите ваше сообщение:"      
+      send: "Отправить"
+    create:
+      message_sent: "Сообщение отправлено"
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedback_mailer:
+    new_feedback:
+      subject: "Новое сообщение на TestGuru!"

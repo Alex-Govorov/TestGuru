@@ -10,7 +10,7 @@ ru:
         body: "Текст ответа"
         correct: "Правильно"
       question:
-        body: "Тест вопроса"
+        body: "Текст вопроса"
       test:
         title: "Название"
         category: "Категория"

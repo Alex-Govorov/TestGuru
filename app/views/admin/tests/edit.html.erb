@@ -2,4 +2,4 @@
 <%# Подключаю JS чтобы появилась ошибка, которую надо пофиксить по заданию %>
 <%= javascript_pack_tag 'utilities/form_inline' %>
 <%= render 'form' %>
-<%= link_to t(:back), admin_tests_path %>
+<%= link_to t(:back), admin_test_path(@test), class: 'btn btn-secondary' %>

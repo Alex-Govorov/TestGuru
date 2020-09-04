@@ -16,14 +16,17 @@ category_databases = Category.find_or_create_by(title: 'Databases')
 # Пользователи
 user_adam = User.find_or_create_by(name: 'Адам') do |user|
   user.email = 'adam@paradise.com'
+  user.password = '3vUb3563'
 end
 
 user_eva = User.find_or_create_by(name: 'Ева') do |user|
   user.email = 'eva@paradise.com'
+  user.password = 'O91735AR'
 end
 
 user_god = User.find_or_create_by(name: 'Бог') do |user|
   user.email = 'god@paradise.com'
+  user.password = 'E3oko03f'
 end
 
 # Тесты
