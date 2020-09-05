@@ -60,21 +60,35 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "test_guru_production"
 
+  # MAILGUN Config
   config.action_mailer.default_url_options = { host: 'testgur.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default charset: 'utf-8'
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: 'smtp.mailgun.org',
     port: 587,
     domain: 'testgur.herokuapp.com',
     authentication: 'plain',
-    enable_starttls_auto: true,
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD']
+    user_name: ENV['MAILGUN_USERNAME'],
+    password: ENV['MAILGUN_PASSWORD']
   }
 
+  # GMAIL Config2
+  # config.action_mailer.default_url_options = { host: 'testgur.herokuapp.com' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.default charset: 'utf-8'
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.gmail.com',
+  #   port: 587,
+  #   domain: 'testgur.herokuapp.com',
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true,
+  #   user_name: ENV['SMTP_USERNAME'],
+  #   password: ENV['SMTP_PASSWORD']
+  # }
+
+  # GMAIL Config1
   # config.action_mailer.perform_caching = false
   # config.action_mailer.default_url_options = { host: 'testgur.herokuapp.com' }
   # config.action_mailer.delivery_method = :smtp
