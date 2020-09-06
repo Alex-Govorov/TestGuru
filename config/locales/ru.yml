@@ -97,10 +97,13 @@ ru:
 
   feedback:
     new:
+      email_for_answer: "Е-мейл для ответа"
       enter_your_message: "Введите ваше сообщение:"      
       send: "Отправить"
     create:
       message_sent: "Сообщение отправлено"
+      message_blank: "Сообщение пустое"
+      wrong_email_format: "Не правильный формат е-мейла"
 
   tests_mailer:
     completed_test:

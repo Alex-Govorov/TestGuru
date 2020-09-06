@@ -1,13 +1,33 @@
 class FeedbackController < ApplicationController
-  before_action :authenticate_user!
-
   def new; end
 
   def create
-    Admin.find_each do |admin|
-      FeedbackMailer.new_feedback(admin, current_user, params[:message]).deliver_now
+    @message = params[:message]
+    @email = current_user&.email || params[:email]
+    @name = current_user&.name || 'Anonymous'
+
+    validate_params
+
+    if params_valid?
+      Admin.find_each do |admin|
+        FeedbackMailer.new_feedback(admin, @name, @email, @message).deliver_now
+      end
+      flash[:notice] = t('.message_sent')
+    else
+      flash[:alert] = @errors.to_sentence
     end
-    flash[:notice] = t('.message_sent')
-    redirect_to root_path
+    render :new
+  end
+
+  private
+
+  def validate_params
+    @errors = []
+    @errors << t('.message_blank') if @message.empty?
+    @errors << t('.wrong_email_format') unless @email.match(Devise.email_regexp)
+  end
+
+  def params_valid?
+    @errors.empty?
   end
 end

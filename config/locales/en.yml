@@ -93,10 +93,13 @@ en:
 
   feedback:
     new:
+      email_for_answer: "E-mail for answer"
       enter_your_message: "Enter your message:"      
       send: "Send"
     create:
       message_sent: "Message sent"
+      message_blank: "Message is blank"
+      wrong_email_format: "Wrong E-mail format"
 
   tests_mailer:
     completed_test:

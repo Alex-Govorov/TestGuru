@@ -6,6 +6,10 @@
 <div class="form-group">
   <small class="form-text text-muted mb-1"><%= t('.enter_your_message') %></small>
   <%= form.text_area :message, id: :message, rows: 7, cols: 60, class: 'form-control' %>
+<% unless current_user %>
+    <small class="form-text text-muted mt-1"><%= form.label :email, t('.email_for_answer') %></small>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+<% end %>
 </div>
 <%= form.submit(t('.send'), class: 'btn btn-primary') %></p>
 <% end %>
