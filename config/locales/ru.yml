@@ -15,6 +15,12 @@ ru:
   signup: "Регистрация"
   welcome: "Добро пожаловать"
 
+  activemodel:
+    attributes:
+      feedback:
+        email: "Е-мейл"
+        message: "Сообщение"
+
   helpers:
     submit:
       test:

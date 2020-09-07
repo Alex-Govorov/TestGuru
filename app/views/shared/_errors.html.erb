@@ -1,12 +1,10 @@
 <% if resource.present? && resource.errors.any? %>
-	<%= content_tag :div, class: 'resource_errors', data: { resource_id: resource.id } do %>
-		<h2>
-      <%= t('.header', count: resource.errors.count) %>:
-    </h2>
-
-		<ul>
+	<%#= content_tag :div, class: 'resource_errors', data: { resource_id: resource.id } do %>
+  <%= content_tag :div do %>
+		<ul class="list-group list-group-horizontal">
+			<li class="list-group-item list-group-item-danger"><%= t('.header', count: resource.errors.count) %>:</li>
 			<% resource.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
+			<li class="list-group-item list-group-item-danger"><%= message %></li>
 			<% end %>
 		</ul>
 	<% end %>
