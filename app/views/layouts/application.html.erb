@@ -13,17 +13,21 @@
 </head>
 
 <body>
-  <%= render 'shared/nav' %>
+  <div class="d-flex toggled" id="wrapper">
+    <%= render 'shared/sidebar' %>
+    <div id="page-content-wrapper">
 
-  <div class="container">
+      <%= render 'shared/nav' %>
 
-    <%= render 'shared/flash' %>
+      <div class="container">
 
-    <%= yield %>
+        <%= render 'shared/flash' %>
+
+        <%= yield %>
+      </div>
+
+      <%= render 'shared/footer' %>
+    </div>
   </div>
-
-  <%= render 'shared/footer' %>
-
-
 </body>
 </html>
