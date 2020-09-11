@@ -12,6 +12,7 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { title: title }).order(title: :desc)
   }
   scope :by_level, ->(level) { where(level: level) }
+  scope :levels, -> { select('DISTINCT level').order(:level) }
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level }

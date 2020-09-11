@@ -14,7 +14,7 @@
 
 <body>
   <div class="d-flex toggled" id="wrapper">
-    <%= render 'shared/sidebar' %>
+    <%= render 'shared/sidebar' if current_user %>
     <div id="page-content-wrapper">
 
       <%= render 'shared/nav' %>

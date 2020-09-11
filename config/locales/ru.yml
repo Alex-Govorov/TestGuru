@@ -27,6 +27,10 @@ ru:
         create: "Создать Тест"
         update: "Обновить Тест"
     label:
+      badge:
+        category_id: "Категория"
+        test_level: "Уровень теста"
+        test_id: "Тест"
       test:
         title: "Название"
         level: "Уровень"
@@ -74,6 +78,22 @@ ru:
         header: "Редактировать ответ"
       new:
         header: "Новый ответ"
+    badges:
+      index:
+        actions: "Действия"
+        image: "Изображение"        
+        header: "Бейджи"
+        new_badge: "Новый бейдж"
+        title: "Название"
+        rule: "Правило"
+      form:
+        select_test_level: "Выберите уровень теста"
+        select_test: "Выберите тест"
+        select_rule: "Выберите правило"
+      new:
+        header: "Создать новый бейдж"
+      create:
+        success: "Бейдж успешно создан"
     questions:
       edit:
         edit_question: "Редактировать %{title} вопрос"

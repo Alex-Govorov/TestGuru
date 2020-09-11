@@ -3,4 +3,6 @@ document.addEventListener('turbolinks:load', () => {
       e.preventDefault()      
       $("#wrapper").toggleClass("toggled")
     })
+
+    $('[data-toggle="tooltip"]').tooltip(); 
 })

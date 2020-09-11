@@ -1,0 +1,35 @@
+<%= render 'shared/errors', resource: @badge %>
+<div class="row justify-content-left mt-2">
+<%= form_with model: [:admin, @badge], local: true, id: 'badge-new' do |form| %>
+
+<div class="form-group">
+  <small class="form-text text-muted"><%= form.label :title %></small>
+  <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+
+  <small class="form-text text-muted"><%= form.label :image_path %></small>
+  <%= form.text_field :image_path, id: :badge_image_path, class: 'form-control' %>
+
+  <small class="form-text text-muted"><%= form.label :rule_name %></small>
+  <%= form.select(:rule_name, rules_for_select, {prompt: t('.select_rule')}, class: 'form-control') %>
+
+  <div class="rule_attr rule_category">
+    <small class="form-text text-muted"><%= form.label :category_id %></small>
+    <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, class: 'form-control never-submit' %>
+  </div>
+
+  <div class="rule_attr rule_level">
+    <small class="form-text text-muted"><%= form.label :test_level %></small>
+    <%= form.collection_select :level, Test.levels, :level, :level, {prompt: t('.select_test_level')}, class: 'never-submit form-control' %>
+  </div>
+
+  <div class="rule_attr rule_attemp">
+    <small class="form-text text-muted"><%= form.label :test_id %></small>
+    <%= form.collection_select :test_id, Test.all, :id, :title, {prompt: t('.select_test')}, class: 'never-submit form-control' %>
+  </div>
+
+</div>
+<%= form.text_field :rule_value, id: :badge_rule_value %>
+<%= link_to t(:back), admin_badges_path, class: 'btn btn-secondary' %>
+<%= form.submit(class: 'btn btn-primary') %>
+<% end %>
+</div>

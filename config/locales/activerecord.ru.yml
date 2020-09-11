@@ -2,13 +2,19 @@ ru:
   activerecord:
     models:
       answer: "Ответ"
+      badge: "Бейдж"
       question: "Вопрос"
-      test: "Тест"  
+      test: "Тест"
 
     attributes:
       answer:
         body: "Текст ответа"
         correct: "Правильно"
+      badge:
+        image_path: "Путь к изображению"
+        title: "Название"
+        rule_name: "Правило"
+        rule_value: "Атрибут для правила"        
       question:
         body: "Текст вопроса"
       test:
