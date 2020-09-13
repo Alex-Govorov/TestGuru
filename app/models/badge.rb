@@ -5,6 +5,12 @@ class Badge < ApplicationRecord
     attemp: 'Выполнить тест c первой попытки'
   }.freeze
 
+  has_many :user_badges, dependent: :destroy
+  has_many :users, through: :user_badges, dependent: :destroy
+
+  scope :ordered_by_id, -> { all.order(:id) }
+  scope :count_by_id, ->(id) { where(id: id).count }
+
   validates :title, :image_path, :rule_name, :rule_value, presence: true
   validates :rule_name, uniqueness: { scope: :rule_value }
 

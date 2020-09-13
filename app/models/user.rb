@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :user_tests, dependent: :destroy
   has_many :tests, through: :user_tests, dependent: :destroy
   has_many :created_tests, class_name: 'Test', dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges, dependent: :destroy
 
   validates :email, presence: true
   validates :email, format: { with: EMAIL_FORMAT }

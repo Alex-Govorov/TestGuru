@@ -1,0 +1,11 @@
+<div class="col">
+  <div class="badge-item <%= "badge-gen" if badges_count(badge).zero? %>" data-toggle="tooltip" title="
+  <%= "\"#{badge.title}\" #{badge.text_rule}" %>">
+    <%= image_tag badge.image_path, class: 'img-fluid' %>
+
+    <% if badges_count(badge) >= 2 %>
+      <%= content_tag :span, badges_count(badge), class: 'badge badge-pill badge-primary badge-on-image' %>
+    <% end %>
+
+  </div>
+</div>

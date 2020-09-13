@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  resources :badges, only: :index
+
   resource :feedback, only: %i[new create]
 
   resources :tests, only: :index do

@@ -19,4 +19,9 @@ module ApplicationHelper
 
     BOOTSTRAP_FLASH[key]
   end
+
+  def render_badges
+    @badges = Badge.ordered_by_id
+    render template: 'badges/index'
+  end
 end
