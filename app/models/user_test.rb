@@ -5,10 +5,6 @@ class UserTest < ApplicationRecord
   has_many :badge_progresses, dependent: :destroy
   has_many :badges, through: :badge_progresses, dependent: :destroy
 
-  scope :completed_in_category, lambda { |category|
-    joins(:user_tests).where(category: category, user_tests: { completed: true }).distinct
-  }
-
   before_validation :set_current_question, :set_completed
 
   def completed?
