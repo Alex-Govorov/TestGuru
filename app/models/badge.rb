@@ -7,6 +7,8 @@ class Badge < ApplicationRecord
 
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges, dependent: :destroy
+  has_many :badge_progresses, dependent: :destroy
+  has_many :user_tests, through: :badge_progresses, dependent: :destroy
 
   scope :ordered_by_id, -> { all.order(:id) }
   scope :count_by_id, ->(id) { where(id: id).count }

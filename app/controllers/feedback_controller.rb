@@ -6,6 +6,8 @@ class FeedbackController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
+    @feedback.email ||= current_user&.email
+    @feedback.user_name = current_user&.name || 'Anonymous'
 
     @feedback.send_mail
     flash[:notice] = t('.message_sent') if @feedback.valid?
@@ -15,9 +17,6 @@ class FeedbackController < ApplicationController
   private
 
   def feedback_params
-    params[:feedback][:email] ||= current_user&.email
-    params[:feedback][:user_name] = current_user&.name || 'Anonymous'
-
-    params.require(:feedback).permit(:message, :email, :user_name)
+    params.require(:feedback).permit(:message, :email)
   end
 end

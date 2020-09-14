@@ -4,7 +4,9 @@ class UserTestsController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    @rewards = BadgeCalculator.new(user_test: @user_test).calculate
+  end
 
   def update
     @user_test.accept!(params[:answer_ids])

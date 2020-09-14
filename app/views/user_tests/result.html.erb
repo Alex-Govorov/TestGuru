@@ -6,4 +6,12 @@
 	<p> <%= t('.success_rate') %>: <span class="text-danger"><%= @user_test.success_rate %>%</span></p>
 <% end %>
 
+<% if @rewards %>
+<div class="badges-collection ml-3 mr-2 col-5">
+  <div class="row mb-2 row-cols-3">
+    <%= render partial: "reward", collection: @rewards %>
+  </div>
+</div>
+<% end %>
+
 <%= link_to t(:back), tests_path, class: 'btn btn-secondary' %>

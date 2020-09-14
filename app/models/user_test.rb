@@ -2,8 +2,14 @@ class UserTest < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_many :badge_progresses, dependent: :destroy
+  has_many :badges, through: :badge_progresses, dependent: :destroy
 
-  before_validation :set_current_question
+  scope :completed_in_category, lambda { |category|
+    joins(:user_tests).where(category: category, user_tests: { completed: true }).distinct
+  }
+
+  before_validation :set_current_question, :set_completed
 
   def completed?
     current_question.nil?
@@ -50,5 +56,9 @@ class UserTest < ApplicationRecord
 
   def set_current_question
     self.current_question = next_question
+  end
+
+  def set_completed
+    self.completed = true if completed? && successful?
   end
 end

@@ -13,6 +13,9 @@ class Test < ApplicationRecord
   }
   scope :by_level, ->(level) { where(level: level) }
   scope :levels, -> { select('DISTINCT level').order(:level) }
+  scope :completed_in_category, lambda { |category|
+    joins(:user_tests).where(category: category, user_tests: { completed: true }).distinct
+  }
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level }
