@@ -3,7 +3,7 @@
     <%= image_tag badge.image_path, class: 'img-fluid' %>
   </td>
   <td class="align-middle"><%= badge.title %></td>
-  <td class="align-middle"><%= badge.text_rule %></td>
+  <td class="align-middle"><%= badge_text_rule(badge) %></td>
   <td class="align-middle">
     <div class="col-sm"><%= link_to t(:show), admin_badge_path(badge) -%></div>
     <div class="col-sm"><%= link_to t(:edit),edit_admin_badge_path(badge) %></div>

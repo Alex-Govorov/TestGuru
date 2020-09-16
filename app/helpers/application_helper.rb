@@ -24,4 +24,19 @@ module ApplicationHelper
     @badges = Badge.ordered_by_id
     render template: 'badges/index'
   end
+
+  def badge_text_rule(badge)
+    value = badge.rule_value
+
+    case badge.rule_name
+    when 'category'
+      category = Category.find(value).title
+      I18n.t(:rule_category, value: category)
+    when 'attemp'
+      test_title = Test.find(value).title
+      I18n.t(:rule_attemp, value: test_title)
+    when 'level'
+      I18n.t(:rule_level, value: value)
+    end
+  end
 end

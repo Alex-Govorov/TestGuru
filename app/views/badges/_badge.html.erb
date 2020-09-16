@@ -1,6 +1,6 @@
 <div class="col">
   <div class="badge-item <%= "badge-gen" if badges_count(badge).zero? %>" data-toggle="tooltip" title="
-  <%= "\"#{badge.title}\" #{badge.text_rule}" %>">
+  <%= "\"#{badge.title}\" #{badge_text_rule(badge)}" %>">
     <%= image_tag badge.image_path, class: 'img-fluid' %>
 
     <% if badges_count(badge) >= 2 %>

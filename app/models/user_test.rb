@@ -5,7 +5,7 @@ class UserTest < ApplicationRecord
   has_many :badge_progresses, dependent: :destroy
   has_many :badges, through: :badge_progresses, dependent: :destroy
 
-  before_validation :set_current_question, :set_completed
+  before_validation :set_current_question
 
   def completed?
     current_question.nil?
@@ -13,6 +13,7 @@ class UserTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.successfully = true if successful?
     save!
   end
 
@@ -52,9 +53,5 @@ class UserTest < ApplicationRecord
 
   def set_current_question
     self.current_question = next_question
-  end
-
-  def set_completed
-    self.completed = true if completed? && successful?
   end
 end

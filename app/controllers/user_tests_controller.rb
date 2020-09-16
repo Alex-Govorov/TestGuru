@@ -5,7 +5,7 @@ class UserTestsController < ApplicationController
   def show; end
 
   def result
-    @rewards = BadgeCalculator.new(user_test: @user_test).calculate
+    @rewards = BadgeService.new(@user_test).calculate
   end
 
   def update

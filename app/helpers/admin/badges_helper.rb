@@ -1,7 +1,8 @@
 class Admin
   module BadgesHelper
     def rules_for_select
-      Badge::RULES.collect { |key, value| [value, key] }
+      rules = BadgeService::RULES
+      rules.map { |rule| I18n.t("rule_#{rule}", value: nil).strip }.zip(rules)
     end
   end
 end
