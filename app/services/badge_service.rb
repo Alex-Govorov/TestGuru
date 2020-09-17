@@ -9,7 +9,7 @@ class BadgeService
     return unless @user_test.successfully
 
     @rewards = []
-    Badge.select { |badge| send "#{badge.rule_name}_calc".to_sym, badge }
+    Badge.find_each { |badge| send "#{badge.rule_name}_calc".to_sym, badge }
     @rewards.empty? ? nil : @rewards
   end
 

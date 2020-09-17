@@ -8,10 +8,6 @@ class Badge < ApplicationRecord
   scope :count_by_id, ->(id) { where(id: id).count }
 
   validates :title, :image_path, :rule_name, :rule_value, presence: true
-  validate :rule_name_included_in_service
+  validates :rule_name, inclusion: { in: BadgeService::RULES.map(&:to_s) }
   validates :rule_name, uniqueness: { scope: :rule_value }
-
-  def rule_name_included_in_service
-    errors.add(:rule_name, :invalid) unless BadgeService::RULES.include?(rule_name.to_sym)
-  end
 end
