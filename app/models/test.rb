@@ -17,6 +17,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :time, numericality: { only_integer: true, greater_than: 0 }
 
   def self.titles_by_category(title)
     by_category_title(title).pluck(:title)

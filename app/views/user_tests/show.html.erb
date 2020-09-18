@@ -1,6 +1,11 @@
-<div class="col-9 mb-2">
+<div class="col-10 mb-2">
   <h1><%= t('.header', test_title: @user_test.test.title, question_number: @user_test.question_number,
-  total_questions: @user_test.total_questions) %></h1>
+  total_questions: @user_test.total_questions) %>
+  <%= content_tag(:span, nil, id: 'timer',
+    data: { end_time: @user_test.end_time.httpdate,
+            result_url: result_user_test_url(@user_test)
+    }) %>
+  </h1>
 
   <div class="progress hide">
     <%= content_tag(:div, nil, class: 'progress-bar',

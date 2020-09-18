@@ -12,7 +12,7 @@ class UserTest < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids) && !time_is_up?
     self.successfully = successful?
     save!
   end
@@ -31,6 +31,14 @@ class UserTest < ApplicationRecord
 
   def total_questions
     self.test.questions.count
+  end
+
+  def end_time
+    created_at + test.time.minutes
+  end
+
+  def time_is_up?
+    Time.now > end_time
   end
 
   private

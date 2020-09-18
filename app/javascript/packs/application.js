@@ -15,6 +15,7 @@ require("utilities/pwd_confirmation")
 require("utilities/sorting")
 require("utilities/sidebar")
 require("utilities/badges_admin.js")
+require("utilities/timer.js")
 
 window.jQuery = $
 window.$ = $
