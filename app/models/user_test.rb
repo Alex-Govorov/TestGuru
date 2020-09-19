@@ -14,6 +14,7 @@ class UserTest < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids) && !time_is_up?
     self.successfully = successful?
+    self.current_question = nil if time_is_up?
     save!
   end
 
@@ -55,7 +56,7 @@ class UserTest < ApplicationRecord
     if new_record?
       test.questions.first
     else
-      test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question&.id).first
     end
   end
 

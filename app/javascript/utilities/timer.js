@@ -22,9 +22,10 @@ function initializeClock(control, endtime) {
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime)
     control.innerHTML = `${t.minutes}:${t.seconds}`
-    if (t.total <= 0) {
-      clearInterval(timeinterval)
-      window.location.href = control.dataset.resultUrl
+    if (t.total < 0) {
+      clearInterval(timeinterval)            
+      // window.location.href = control.dataset.resultUrl
+      document.getElementsByTagName('form')[0].submit()
     }
   },1000)
 }
