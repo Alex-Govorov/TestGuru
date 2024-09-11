@@ -12,27 +12,27 @@ USERS = %w[Alex Eve V]
 CATEGORIES = %w[Ruby Go Elixir]
 TESTS = %w[Operators Conditions Iterators]
 
-USERS.each { |user_name| User.create(name: user_name) }
+USERS.each { |user_name| (@users ||= []) << User.create(name: user_name) }
 
-CATEGORIES.each { |category| Category.create(title: category) }
+CATEGORIES.each { |category| (@categories ||= []) << Category.create(title: category) }
 
-20.times { Test.create(title: TESTS.sample,
-                       level: rand(9),
-                       category_id: Category.all.to_a.sample.id) }
+20.times { (@tests ||= []) << Test.create(title: TESTS.sample,
+                                          level: rand(9),
+                                          category_id: @categories.sample.id) }
 
 20.times do
-  Question.create(body: 'What is one of the key benefits of using eager loading in Active Record?',
-                  test_id: Test.all.to_a.sample.id)
+  question = Question.create(body: 'What is one of the key benefits of using eager loading in Active Record?',
+                             test_id: @tests.sample.id)
 
   Answer.create(body: 'It increases the number of database queries',
-                question_id: Question.last.id)
+                question_id: question.id)
   Answer.create(body: 'It reduces the number of database queries needed for data retrieval',
-                question_id: Question.last.id,
+                question_id: question.id,
                 correct: true)
   Answer.create(body: 'It simplifies the database schema',
-                question_id: Question.last.id)
+                question_id: question.id)
   Answer.create(body: 'It automatically indexes all database fields',
-                question_id: Question.last.id)
+                question_id: question.id)
 end
 
-20.times { User.all.to_a.sample.tests << Test.all.to_a.sample }
+20.times { @users.sample.tests << @tests.sample }
