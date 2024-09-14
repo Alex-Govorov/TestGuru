@@ -18,9 +18,7 @@ CATEGORIES.each { |category| (@categories ||= []) << Category.create(title: cate
 
 20.times { (@tests ||= []) << Test.create(title: TESTS.sample,
                                           level: rand(9),
-                                          category_id: @categories.sample.id,
-                                          author_id: @users.sample.id
-                                          ) }
+                                          category_id: @categories.sample.id) }
 
 20.times do
   question = Question.create(body: 'What is one of the key benefits of using eager loading in Active Record?',

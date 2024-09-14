@@ -5,8 +5,7 @@ class CreateTests < ActiveRecord::Migration[7.2]
       t.integer :level, default: 0
 
       t.timestamps
-      t.belongs_to :category, foreign_key: true
-      t.belongs_to :author, foreign_key: { to_table: :users }
+      t.references :category, foreign_key: { to_table: :categories }
     end
   end
 end
