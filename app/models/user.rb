@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :tests
-  has_many :tests_published, class_name: "Test", foreign_key: "author_id"
+  has_many :tests_published, class_name: "Test", foreign_key: "author_id", dependent: :destroy
+  has_and_belongs_to_many :tests, dependent: :destroy
 
   def tests_by_level(level)
     self.tests.where(level: level)
