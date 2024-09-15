@@ -25,6 +25,6 @@ module TestGuru
     # config.eager_load_paths << Rails.root.join("extras")
 
     I18n.available_locales = [ :en, :ru ]
-    I18n.default_locale = :ru
+    I18n.default_locale = :en
   end
 end
