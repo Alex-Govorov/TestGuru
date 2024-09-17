@@ -4,9 +4,9 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_and_belongs_to_many :users, dependent: :destroy
 
-  scope :level_easy, -> {  where(level: 0..1) }
-  scope :level_normal, -> {  where(level: 2..4) }
-  scope :level_hard, -> {  where("level >= ?", 5) }
+  scope :level_easy, -> {  by_level(0..1) }
+  scope :level_normal, -> {  by_level(0..1) }
+  scope :level_hard, -> {  by_level(5..Float::INFINITY) }
   scope :by_category_title, ->(title) { joins(:category).where(categories: { title: title }).order(title: :desc).pluck(:title) }
   scope :by_level, ->(level) { where(level: level) }
 
