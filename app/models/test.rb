@@ -11,5 +11,7 @@ class Test < ApplicationRecord
   scope :by_level, ->(level) { where(level: level) }
 
   validates :title, presence: true
+  validates :title, uniqueness: { scope: :level,
+                                  message: "already taken for this level" }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 end
