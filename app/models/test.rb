@@ -9,4 +9,6 @@ class Test < ApplicationRecord
   scope :level_hard, -> {  where("level >= ?", 5) }
   scope :by_category_title, ->(title) { joins(:category).where(categories: { title: title }) }
   scope :by_level, ->(level) { where(level: level) }
+
+  validates :title, presence: true
 end
