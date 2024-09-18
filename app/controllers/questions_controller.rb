@@ -3,7 +3,6 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @test.questions
-    render json: { questions: @questions }
   end
 
   def show
@@ -18,6 +17,10 @@ class QuestionsController < ApplicationController
     question = @test.questions.create(params.require(:question).permit(:body))
 
     render plain: question.inspect
+  end
+
+  def destroy
+    Question.find(params[:id]).destroy
   end
 
   private
