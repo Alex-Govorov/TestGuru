@@ -16,9 +16,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.create(params.require(:question).permit(:body))
+    question = @test.questions.new(params.require(:question).permit(:body))
 
-    render plain: question.inspect
+    if question.save
+      render plain: question.inspect
+    else
+      render plain: "Error on save question"
+    end
   end
 
   def destroy
