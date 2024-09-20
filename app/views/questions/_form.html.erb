@@ -1,0 +1,8 @@
+<%= form_with model: resource do |form| %>
+<p>
+  <%= form.label :body %>
+  <%= form.text_field :body, id: :question_title %>
+</p>
+
+<p><%= form.submit %></p>
+<% end %>
