@@ -1,7 +1,9 @@
 module QuestionsHelper
-  def question_header
-    action_headers = { "new" => "Create New #{@test.title} Question",
-                       "edit" => "Edit #{@test.title} Question" }
-    action_headers[action_name]
+  def question_header(question)
+    if question.persisted?
+      "Edit #{question.test.title} Question"
+    elsif question.new_record?
+      "Create New #{question.test.title} Question"
+    end
   end
 end
