@@ -16,7 +16,6 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @test = @question.test
   end
 
   def update
