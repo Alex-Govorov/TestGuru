@@ -1,0 +1,13 @@
+<div id="flash">  
+  <% if flash.keys.any? %>
+    <% flash.keys.each do |type| %>
+      <div class="<%= type.to_s %>">
+        <ul>        
+          <% flash[type].each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>

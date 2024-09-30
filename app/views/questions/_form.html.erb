@@ -1,0 +1,11 @@
+<h1> <%= question_header(@question) %></h1>
+
+<%= form_with model: resource do |form| %>
+<p>
+  <%= form.label :body %>
+  <%= form.text_field :body, id: :question_title %>
+</p>
+
+<p><%= form.submit %></p>
+<% end %>
+<p><%= link_to 'Back', test_path(@question.test) %></p>
